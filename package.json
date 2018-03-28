@@ -1,0 +1,39 @@
+{
+  "name": "spawn-cmd-log",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "rm -rf lib && npm run compile -- --watch",
+    "build": "rm -rf lib && npm run compile",
+    "compile": "babel src -d lib",
+    "test": "mocha --require babel-register src/**/*.spec.js",
+    "tdd": "npm test -- -w",
+    "postinstall": "npm run complile"
+  },
+  "keywords": ["spawn", "log", "promise"],
+  "author": { 
+    "name": "Jorge Bastias", 
+    "email": "jorgebastias@hotmail.com",
+    "url": "https://github.com/jbastias"
+   },
+   "repository" :{ 
+    "type" : "git", 
+    "url" : "https://github.com/npm/npm.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^2.6.8",
+    "mz": "^2.6.0",
+    "rimraf-promise": "^2.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.5.1",
+    "chai": "^4.0.1",
+    "mocha": "^3.4.2",
+    "randomstring": "^1.1.5"
+  }
+}
